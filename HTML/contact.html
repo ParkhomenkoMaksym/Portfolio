@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="stylesheet" href="../CSS/index.css">
+    <script src="../JS/index.js"></script>
+</head>
+
+<body>
+    <!-- Maksym Parkhomenko, Programming in HTML5, Assignment Task B -->
+
+    <div class="page_container">
+        <header>
+            <h1>My Portfolio</h1>
+            <nav>
+<!-- Navigation menu -->
+                <ul class="navigation">
+                    <li><a href="../index.html">Home</a> </li>
+                    <li id="selected">Contacts</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <artical>
+<!-- form for contact-->
+                    <form id="myForm" action="" novalidate>
+            
+                        <div class="form-control">
+                            <label for="fullName">Your full name</label>
+                            <input required id="fullName" type="text" name="full_name" />
+                            <div class="field-error"></div>
+                        </div>
+            
+                        <div class="form-control">
+                            <label for="emailAddress">Your email</label>
+                            <input required id="emailAddress" type="email" name="email_address" />
+                            <div class="field-error"></div>
+                        </div>
+                        <div class="form-control">
+                            <textarea class="message" required id="message" name="message"></textarea>
+                        </div>
+                        <input type="submit" value="Go!" />
+            
+                    </form>
+                </artical>
+            </section>
+            <aside>
+<!-- Google map and Leaflet -->
+                <p>Click the button to get your coordinates.</p>
+                <p>
+                    <button id="gMap">Try It</button>
+                </p>
+            
+                <p id="demo"></p>
+            
+                <p>
+                    <button id="find-me">Zoom</button>
+                </p>
+            
+                <!-- Element to insert the map into -->
+                <div id="myMap"></div>
+ 
+            </aside>
+            
+            </main>
+            <footer>
+                <small>
+                    &copy; 2023. Portfolio
+                    <br>
+                    All trademarks and registered trademarks appearing on
+                    this site are the property of their respective owners.
+                </small>
+            </footer>
+            </div>
+            </body>
+            
+            </html>

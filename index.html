@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="JS/index.js"></script>
+<!-- Script for Web wworker -->
+    <script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.clickcount) {
+              sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+            } else {
+              sessionStorage.clickcount = 1;
+            }
+            document.getElementById("resultCount").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+          } else {
+            document.getElementById("resultCount").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+        </script>
+<!-- Style for Web socket -->
+        <style>
+            body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      
+            #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+            #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+            #input:focus { outline: none; }
+            #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+      
+            #messages { list-style-type: none; margin: 0; padding: 0; }
+            #messages > li { padding: 0.5rem 1rem; }
+            #messages > li:nth-child(odd) { background: #efefef; }
+          </style>
+</head>
+
+<body>
+    <!-- Maksym Parkhomenko, Programming in HTML5, Assignment Task B -->
+    <div class="page_container">
+        <header>
+<!-- Animation with JavaScript -->
+            <p id="clickMe">Click me</p>
+            <h1 id="animate"> <button id="myMove">My Portfolio </button></h1>
+
+            <script>
+                const myMove = document.getElementById("myMove");
+                myMove.addEventListener("click", () => {
+                  let id = null;
+                  const elem = document.getElementById("animate");   
+                  let pos = 0;
+                  clearInterval(id);
+                   id = setInterval(frame, 5);
+                  function frame() {
+                    // while(true){
+                    if (pos == 1320) {
+                      clearInterval(id);
+                    } else {
+                        
+                       pos++;
+                      
+                      elem.style.left = pos + "px"; 
+                    }
+                  }
+                // }
+                })
+                </script>
+
+            <nav>
+<!-- Navigation menu -->
+                <ul class="navigation">
+                    <li id="selected">Home</li>
+                    <li><a href="HTML/contact.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+
+            <section >
+
+                <artical>               
+                     <h2>Programming in HTML5 with JavaScript and CSS3 skills</h2>
+                <p>My name is Maksym Parkhomenko, I am 33 years old, and I am from Ukraine. I have created this
+                    website to showcase my skills as a software developer during my studies.</p>
+                </artical>
+                <artical>
+<!-- Image gallery -->
+                    <h2>This is the images gallery</h2>
+                    <div class="full-img">
+                <img class="displayed-img" src="Images/pic1.jpg" alt="Closeup of a human eye">
+                <div class="overlay"></div>
+              </div>
+          
+              <div class="thumb-bar">
+          
+          
+              </div>
+              <script src="JS/image.js"></script>
+                </artical>
+                <artical>
+<!-- Map on the picture -->
+                  <h2>This is the map</h2>
+                  <img src="Images/breakfast.jpg" usemap="#image-map">
+                  <map name="image-map">
+                    <area target="_blank" alt="Juice" title="Juice" href="https://thejuiceworks.ie/"
+                      coords="536,151,502,113,521,63,535,38,590,38,699,71,741,59,774,92,805,124,793,147,713,172,701,259,667,295,608,275,542,223"
+                      shape="poly">
+                    <area target="_blank" alt="Eggs" title="Eggs" href="https://www.butlersorganiceggs.ie/"
+                      coords="543,313,493,318,437,327,414,357,355,360,309,366,267,370,221,372,227,396,238,409,253,411,272,419,325,430,377,436,429,438,465,434,484,420,509,426,541,420,572,409,601,393,621,380,636,364,643,344,624,327"
+                      shape="poly">
+                    <area target="_blank" alt="Bacon" title="Bacon" href="https://kennedybacon.co.uk/"
+                      coords="309,250,329,257,369,248,392,250,424,238,536,241,557,238,591,268,566,303,510,299,428,322,409,346,358,354,297,359,209,366,179,355,152,321"
+                      shape="poly">
+                    <area target="_blank" alt="Bread" title="Bread" href="https://mccambridge.ie/"
+                      coords="70,177,1,208,1,317,114,339,161,302,222,279,241,255,237,220,172,199" shape="poly">
+                    <area target="_blank" alt="Coffee" title="Coffee" href="https://moyeecoffee.ie/"
+                      coords="375,241,425,235,475,231,515,220,535,209,529,156,505,129,488,117,492,83,470,65,447,61,421,57,396,58,374,60,352,63,333,70,318,84,322,145,292,156,269,165,253,176,249,193,260,207,291,223,336,240"
+                      shape="poly">
+                    <area target="_blank" alt="Berries " title="Berries " href="https://www.thefreshmarket.ie/"
+                      coords="165,57,188,47,256,26,280,3,320,18,352,17,393,20,418,14,439,26,453,35,474,41,491,55,482,69,429,53,389,55,353,60,317,72,314,120,244,113,168,90"
+                      shape="poly">
+                    <area target="_blank" alt="Towel" title="Towel" href="https://www.homestoreandmore.ie/"
+                      coords="161,190,69,169,2,200,3,16,36,0,195,0,270,3,229,28,161,55,166,127" shape="poly">
+                  </map>
+                </artical>
+                
+                <article>
+<!-- Video -->
+                  <h2>This is the video tag</h2>
+                  <video width="840" controls>
+                    <source src="Video/A day in a programmer's life.mp4">
+                
+                    Your browser does not support the video
+                  </video>
+                </article>
+                <article>
+<!-- Canvas and Animation -->
+                  <h2>This is the canvas tag</h2>
+                  <canvas></canvas>
+                  <script src="JS/test.js"></script>
+                </article>
+                <article>
+<!-- XMLHttpRequest -->
+                  <h2>The XMLHttpRequest Object</h2>
+                
+                  <button type="button" onclick="loadDoc()">Get my CD collection</button>
+                  <br><br>
+                  <table id="demo"></table>
+                
+                  <script>
+                    function loadDoc() {
+                      var xhttp = new XMLHttpRequest();
+                      xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                          myFunction(this);
+                        }
+                      };
+                      xhttp.open("GET", "cd_catalog.xml", true);
+                      xhttp.send();
+                    }
+                    function myFunction(xml) {
+                      var i;
+                      var xmlDoc = xml.responseXML;
+                      var table = "<tr><th>Artist</th><th>Title</th><th>Country</th><th>Price</th><th>Year</th></tr>";
+                      var x = xmlDoc.getElementsByTagName("CD");
+                      for (i = 0; i < x.length; i++) {
+                        table += "<tr><td>" +
+                          x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                          "</td><td>" +
+                          x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                          "</td><td>" +
+                          x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+                          "</td><td>" +
+                          x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+                          "</td><td>" +
+                          x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
+                          "</td></tr>";
+                      }
+                      document.getElementById("demo").innerHTML = table;
+                    }
+                  </script>
+                </article>
+                <article>
+<!-- Web worker -->
+                  <h2>Web Workers</h2>
+                  <p>Count numbers: <output id="result"></output></p>
+                  <button onclick="startWorker()">Start Worker</button>
+                  <button onclick="stopWorker()">Stop Worker</button>
+                
+                  <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
+                
+                  <script>
+                    var w;
+
+                    function startWorker() {
+                      if (typeof (Worker) !== "undefined") {
+                        if (typeof (w) == "undefined") {
+                          w = new Worker("demo_workers.js");
+                        }
+                        w.onmessage = function (event) {
+                          document.getElementById("result").innerHTML = event.data;
+                        };
+                      } else {
+                        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+                      }
+                    }
+
+                    function stopWorker() {
+                      w.terminate();
+                      w = undefined;
+                    }
+                  </script>
+                
+                  <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+                  <div id="resultCount"></div>
+                  <p>Click the button to see the counter increase.</p>
+                  <p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+                </article>
+                <article>
+<!-- Web socket -->
+                  <h2>Web Socket</h2>
+                  <a href="http://127.0.0.1:3000">Go to Chat</a></a>
+                </article>
+                </section>
+                <aside>
+<!-- Local storage -->
+                  <h2>Local Storage</h2>
+                  <form>
+                    <label for="note_color">Color: </label>
+                    <select id="note_color">
+                      <option value="LightGoldenRodYellow">yellow</option>
+                      <option value="PaleGreen">green</option>
+                      <option value="LightPink">pink</option>
+                      <option value="LightBlue">blue</option>
+                    </select>
+                    <label for="note_text">Text:</label>
+                    <input type="text" id="note_text">
+                    <input type="button" id="add_button" value="Add Sticky Note to Self">
+                    <input type="button" id="clear_button" value="Clear all Sticky Notes">
+                
+                  </form>
+                  <ul id="stickies">
+                  </ul>
+                  <script src="JS/notetoself.js"></script>
+                </aside>
+                </main>
+<!-- Space for footer -->
+                <div id="spaceFooter"></div>
+
+                <footer id="footerHome">
+                  <small>
+                    &copy; 2023. Portfolio
+                    <br>
+                    All trademarks and registered trademarks appearing on
+                    this site are the property of their respective owners.
+                  </small>
+                </footer>
+                </div>
+                </body>
+                
+                </html>
